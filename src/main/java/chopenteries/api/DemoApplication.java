@@ -9,7 +9,8 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 
 @Slf4j
 @EnableScheduling
-@SpringBootApplication(exclude = {DataSourceAutoConfiguration.class})
+@SpringBootApplication
+@RequiredArgsConstructor
 public class DemoApplication {
 
     public static void main(String[] args) {
