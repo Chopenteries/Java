@@ -9,7 +9,6 @@ import org.hibernate.annotations.OnDeleteAction;
 
 import javax.persistence.*;
 import java.io.Serializable;
-import java.util.List;
 
 @Entity
 @Table(name = "products")
@@ -22,10 +21,10 @@ public class Products extends DefaultEntity implements Serializable {
     private int id;
 
     // package name
-    @Column(nullable = false)
+    @Column(nullable = false, length = 30)
     private String name;
 
-    @Column(nullable = false, unique = true)
+    @Column(nullable = false, unique = true, length = 8)
     private Integer sku;
 
     // price
@@ -34,7 +33,7 @@ public class Products extends DefaultEntity implements Serializable {
 
     // Relation
     @OnDelete(action = OnDeleteAction.CASCADE)
-    @OneToOne(mappedBy = "products", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @OneToOne(mappedBy = "products", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     @JsonBackReference
     private ProductDetails productDetails;
 

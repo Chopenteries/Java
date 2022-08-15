@@ -18,15 +18,15 @@ public class ProductDetails extends DefaultEntity implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    @Column(nullable = false)
+    @Column(nullable = false, length = 30)
     private String description;
 
     @Column(nullable = false)
     private String productType;
 
     // Relation
-    @OneToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "products_id", referencedColumnName = "sku", nullable = false)
+    @OneToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "products_id", referencedColumnName = "products_sku", nullable = false)
     @JsonManagedReference
     private Products products;
 }

@@ -13,7 +13,7 @@ import javax.validation.constraints.Min;
 @Setter
 public class ProductRequest implements DtoConverter<Products> {
 
-    @Max(50)
+    @Max(30)
     private String name;
 
     @Min(8)
@@ -22,7 +22,7 @@ public class ProductRequest implements DtoConverter<Products> {
 
     private Integer price;
 
-    @Max(50)
+    @Max(30)
     private String description;
 
     private String productType;
