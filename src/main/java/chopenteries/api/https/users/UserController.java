@@ -44,7 +44,7 @@ public class UserController {
     @DeleteMapping("/{id}")
     @ResponseStatus(HttpStatus.OK)
     @ResponseBody
-    // TODO: Need auth and token
+        // TODO: Need auth and token
     Object deleteUserById(@PathVariable("id") int id) {
         return responseTemplate.createResponse(userService.deleteUser(id));
     }

@@ -22,29 +22,29 @@ public class ProductController {
     @PostMapping("/register")
     @ResponseBody
     @ResponseStatus(HttpStatus.CREATED)
-    public Object registerProduct(Authentication authentication, ProductRequest request){
-        return responseTemplate.createResponse(productService.registerNewProduct(authentication,request));
+    public Object registerProduct(Authentication authentication, ProductRequest request) {
+        return responseTemplate.createResponse(productService.registerNewProduct(authentication, request));
     }
-    
+
     @PostMapping("/{id}")
     @ResponseBody
     @ResponseStatus(HttpStatus.ACCEPTED)
     public Object UpdateProduct(@RequestBody Authentication authentication, ProductRequest request,
-                                @PathVariable("id") Integer id){
-        return responseTemplate.createResponse(productService.updateAll(authentication,id,request));
+                                @PathVariable("id") Integer id) {
+        return responseTemplate.createResponse(productService.updateAll(authentication, id, request));
     }
 
     @GetMapping("/{id}")
     @ResponseBody
     @ResponseStatus(HttpStatus.OK)
-    public Object getProductById(@PathVariable("id") Integer id){
+    public Object getProductById(@PathVariable("id") Integer id) {
         return responseTemplate.createResponse(productService.findProductById(id));
     }
 
     @GetMapping("/{sku}")
     @ResponseBody
     @ResponseStatus(HttpStatus.OK)
-    public Object getProductBySku(@PathVariable("sku") Integer sku){
+    public Object getProductBySku(@PathVariable("sku") Integer sku) {
         return responseTemplate.createResponse(productService.findProductBySku(sku));
     }
 

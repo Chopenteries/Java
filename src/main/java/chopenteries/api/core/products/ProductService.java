@@ -45,11 +45,11 @@ public class ProductService {
         return productRepository.findProductById(id);
     }
 
-    public Optional<Products> findProductBySku(Integer sku){
+    public Optional<Products> findProductBySku(Integer sku) {
         return productRepository.findProductBySku(sku);
     }
 
-    public Products deleteProduct(int id){
+    public Products deleteProduct(int id) {
         Products products = findProductById(id).orElseThrow(ProductIdNotFound::new);
         productRepository.delete(products);
         return products;

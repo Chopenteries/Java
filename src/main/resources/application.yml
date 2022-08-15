@@ -3,8 +3,8 @@ server:
 spring:
   jpa:
     hibernate:
-      ddl-auto: update
+      ddl-auto: "create-drop"
   datasource:
-    url: jdbc:postgresql://localhost:5432/backend
+    url: jdbc:postgresql://localhost:5432/postgres
     username: postgres
     password: Copter1410
